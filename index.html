@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Content - Live Stream</title>
+    
+    <!-- ========== PREVIEW GAMBAR KHUSUS UNTUK THREADS / DM ========== -->
+    <meta property="og:title" content="Exclusive Private Room 😈">
+    <meta property="og:description" content="Tap to watch the live stream right now!">
+    <meta property="og:image" content="https://pbs.twimg.com/media/HLbB16DbsAAojAN?format=jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://pbs.twimg.com/media/HLbB16DbsAAojAN?format=jpg">
+    <!-- =============================================================== -->
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+        }
+
+        /* BACKGROUND VIDEO LITTERBOX */
+        .bg-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* OVERLAY GELAP AGAR KONTEN TERBACA */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* KOTAK UTAMA */
+        .content {
+            position: relative;
+            z-index: 10;
+            max-width: 380px;
+            width: 90%;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(20, 20, 20, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f472b6;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            font-size: 13px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        /* TIMER BOX */
+        .timer-box {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #fca5a5;
+            margin-bottom: 20px;
+        }
+
+        .timer-num {
+            font-weight: bold;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        /* TOMBOL MANUAL KE SMARTLINK */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #22c55e;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+        .cta-btn:active { transform: scale(0.97); }
+    </style>
+</head>
+<body>
+
+    <!-- BACKGROUND VIDEO DARI LITTERBOX -->
+    <video class="bg-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto">
+        <source src="https://litter.catbox.moe/kdhuuk7zsvjvlprs.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="overlay"></div>
+
+    <!-- KONTEN TENGAH -->
+    <div class="content">
+        <div class="title">🔥 Private Room Access</div>
+        <div class="desc">Please wait while we connect you to the secure server...</div>
+
+        <!-- HITUNG MUNDUR 30 DETIK -->
+        <div class="timer-box">
+            Redirecting in <span class="timer-num" id="countdown">30</span> seconds...
+        </div>
+
+        <!-- TOMBOL MANUAL JIKA TIDAK MAU MENUNGGU -->
+        <a href="https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01" class="cta-btn">
+            🟢 Join Now Instantly
+        </a>
+    </div>
+
+    <script>
+        const targetUrl = "https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01";
+        
+        let timeLeft = 30;
+        const countdownEl = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownEl.innerText = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
