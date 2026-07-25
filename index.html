@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">🟢 CONTATE-ME</title>
+    <title id="page-title">CONTATE-ME</title>
     <meta property="og:title" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-title">
     <meta property="og:description" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-desc">
     <meta property="og:image" content="https://pbs.twimg.com/media/HOG2IDuboAEjnlX?format=jpg">
@@ -17,13 +17,35 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19;
+            background-color: #000000;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 15px;
+            position: relative;
+        }
+
+        /* Styling untuk Header Pojok Kiri Atas (Logo WA + Teks sesuai screenshot) */
+        .top-left-brand {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            z-index: 10;
+        }
+        .top-left-brand svg {
+            width: 22px;
+            height: 22px;
+            fill: #22c55e;
+            flex-shrink: 0;
         }
 
         .phone-card {
@@ -90,7 +112,7 @@
             line-height: 1.4;
         }
 
-        /* Styling Tombol Sosial dengan Icon Asli */
+        /* Tombol Sosial */
         .social-btn {
             display: flex;
             align-items: center;
@@ -113,13 +135,14 @@
             width: 20px;
             height: 20px;
             fill: currentColor;
+            flex-shrink: 0;
         }
         .social-btn:active {
             transform: scale(0.98);
         }
         .btn-wa { background-color: #22c55e; }
         .btn-tg { background-color: #0ea5e9; }
-        .btn-tinder { background-color: #f43f5e; }
+        .btn-tinder { background-color: #fe3c72; }
 
         .features-list {
             display: flex;
@@ -201,6 +224,12 @@
 </head>
 <body>
 
+    <!-- Logo WhatsApp + Nama Brand di Pojok Kiri Atas Sesuai Screenshot -->
+    <a href="#" class="top-left-brand" id="link-top-brand">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span id="top-brand-text">WhatsApp Me</span>
+    </a>
+
     <div class="phone-card">
         <div class="profile-container">
             <img src="https://pbs.twimg.com/media/HOG2Dx8aYAAHHfL?format=jpg" alt="Profile" class="profile-img">
@@ -212,24 +241,24 @@
         </div>
 
         <h2 id="txt-headline">Meet New People <span style="color:#ef4444;">❤</span></h2>
-        <p class="subtitle" id="txt-subdesc">Start chatting with verified people near you instantly.</p>
+        <p class="subtitle" id="txt-subdesc">Start chatting with verified people near you.</p>
 
-        <!-- Tombol WhatsApp dengan Icon Asli & CTA 3 Kata Gacor -->
+        <!-- Tombol WhatsApp -->
         <a href="#" class="social-btn btn-wa" id="link-wa">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span id="cta-wa">Chat WhatsApp Sekarang</span>
+            <span id="cta-wa">WhatsApp</span>
         </a>
 
-        <!-- Tombol Telegram dengan Icon Asli & CTA 3 Kata Gacor -->
+        <!-- Tombol Telegram -->
         <a href="#" class="social-btn btn-tg" id="link-tg">
             <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.259.259-.536.259l.192-3.055 5.556-5.024c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.535-.195 1.006.132.832.936z"/></svg>
-            <span id="cta-tg">Chat Telegram Sekarang</span>
+            <span id="cta-tg">Telegram</span>
         </a>
 
-        <!-- Tombol Tinder dengan Icon Asli & CTA 3 Kata Gacor -->
+        <!-- Tombol Tinder -->
         <a href="#" class="social-btn btn-tinder" id="link-tinder">
-            <svg viewBox="0 0 24 24"><path d="M11.64 2c1.9 1.8 3.1 4.3 3.1 7.1 0 3.3-2 6.1-4.9 7.4.2-.6.4-1.2.4-1.8 0-4.1-3.4-7.4-5.6-10.7-.3-.5-.6-1-.9-1.5 1.8-1 4-1.4 6.3-1.4.6 0 1.2.3 1.6.9zm-2.4 12.5c2.4 0 4.4 2 4.4 4.4s-2 4.4-4.4 4.4-4.4-2-4.4-4.4 2-4.4 4.4-4.4z"/></svg>
-            <span id="cta-tinder">Mulai Kencan Sekarang</span>
+            <svg viewBox="0 0 24 24"><path d="M18.24 6.74c-1.01-1.89-2.9-3.41-5.18-4.07-.35-.1-.71.14-.77.51-.12.82-.41 2.37-1.57 3.94-1.22 1.65-2.88 2.87-3.95 4.67C5.97 13.1 5.76 16.14 7.6 18.57c1.78 2.36 4.9 3.03 7.39 1.48 2.72-1.7 3.32-5.59 1.54-8.31-.56-.87-1.32-1.63-2.11-2.39-.33-.32-.67-.65-1.01-.98-.34-.33-.67-.66-1.01-.99 1.13.25 2.21.91 2.87 1.83.65.91.89 2.06.63 3.16-.14.61-.43 1.17-.83 1.63-.42.49-.97.87-1.6 1.12-.62.25-1.31.35-2 .28-.69-.07-1.35-.31-1.92-.71-.57-.4-1.03-.94-1.33-1.57-.3-.63-.43-1.34-.37-2.05.06-.71.31-1.39.73-1.98 1.17-1.66 2.62-2.99 3.65-4.52.88-1.31 1.25-2.6 1.41-3.66z"/></svg>
+            <span id="cta-tinder">Tinder</span>
         </a>
 
         <div class="features-list">
@@ -238,7 +267,7 @@
             <div class="feature-item" id="feat-3">✓ Quick response</div>
         </div>
 
-        <div class="continue-label">Continue</div>
+        <div class="continue-label">Continue em</div>
         
         <div style="font-size: 1.1rem; color: #10b981; margin-bottom: 8px;">✓</div>
 
@@ -249,7 +278,7 @@
             
             <div class="action-buttons">
                 <a href="#" class="btn-action-red" id="btn-continue">Continue</a>
-                <button class="btn-action-dark" onclick="window.location.href=smartlinkUrl">Cancel</button>
+                <button class="btn-action-dark" onclick="window.location.href=smartlinkUrl">Cancelar</button>
             </div>
         </div>
     </div>
@@ -260,54 +289,58 @@
         // ==========================================
         const smartlinkUrl = "https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01";
 
+        document.getElementById('link-top-brand').href = smartlinkUrl;
         document.getElementById('link-wa').href = smartlinkUrl;
         document.getElementById('link-tg').href = smartlinkUrl;
         document.getElementById('link-tinder').href = smartlinkUrl;
         document.getElementById('btn-continue').href = smartlinkUrl;
 
-        // Kamus Multi-Bahasa Otomatis (Termasuk 🟢 CONTATE-ME & CTA 3 Kata Gacor)
+        // Kamus Multi-Bahasa Otomatis (Page Title TETAP "🟢CONTATE-ME")
         const translations = {
             pt: { // Portugis (Brasil)
-                title: "🟢 CONTATE-ME",
-                ogTitle: "🟢 CONTATE-ME - Acesso Exclusivo (18+) 🔥",
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
                 verified: "Perfil verificado",
-                headline: 'Conhecer Pessoas <span style="color:#ef4444;">❤</span>',
-                subdesc: "Comece a conversar com pessoas verificadas perto de você instantaneamente.",
-                wa: "Conversar no WhatsApp",
-                tg: "Conversar no Telegram",
-                tinder: "Iniciar Namoro Agora",
+                headline: 'Conheça Novas Pessoas <span style="color:#ef4444;">❤</span>',
+                subdesc: "Comece a conversar com pessoas verificadas perto de você.",
                 f1: "✓ Perfis Verificados",
-                f2: "✓ Chat Privado",
-                f3: "✓ Resposta Rápida",
-                cont: "Continuar"
+                f2: "✓ Conversa particular",
+                f3: "✓ Resposta rápida",
+                contLabel: "Continue em",
+                cont: "Continue",
+                cancel: "Cancelar"
             },
             es: { // Spanyol
-                title: "🟢 CONTATE-ME",
-                ogTitle: "🟢 CONTATE-ME - Acceso Exclusivo (18+) 🔥",
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
                 verified: "Perfil verificado",
                 headline: 'Conoce Gente Nueva <span style="color:#ef4444;">❤</span>',
-                subdesc: "Empieza a chatear con personas verificadas cerca de ti al instante.",
-                wa: "Chatear por WhatsApp",
-                tg: "Chatear por Telegram",
-                tinder: "Iniciar Cita Ahora",
+                subdesc: "Empieza a chatear con personas verificadas cerca de ti.",
                 f1: "✓ Perfiles Verificados",
-                f2: "✓ Chat Privado",
-                f3: "✓ Respuesta Rápida",
-                cont: "Continuar"
+                f2: "✓ Chat privado",
+                f3: "✓ Respuesta rápida",
+                contLabel: "Continuar en",
+                cont: "Continuar",
+                cancel: "Cancelar"
             },
             en: { // Default Inggris (Selain PT & ES)
-                title: "🟢 CONTATE-ME",
-                ogTitle: "🟢 CONTATE-ME - Exclusive Access (18+) 🔥",
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
                 verified: "Verified profile",
                 headline: 'Meet New People <span style="color:#ef4444;">❤</span>',
-                subdesc: "Start chatting with verified people near you instantly.",
-                wa: "Chat WhatsApp Now",
-                tg: "Chat Telegram Now",
-                tinder: "Start Dating Now",
+                subdesc: "Start chatting with verified people near you.",
                 f1: "✓ Verified Profiles",
                 f2: "✓ Private chat",
                 f3: "✓ Quick response",
-                cont: "Continue"
+                contLabel: "Continue",
+                cont: "Continue",
+                cancel: "Cancel"
             }
         };
 
@@ -337,23 +370,33 @@
 
         function applyTranslations(lang) {
             const t = translations[lang];
-            document.getElementById('page-title').innerText = t.title;
-            document.getElementById('og-title').setAttribute('content', t.ogTitle);
-            document.getElementById('txt-verified').innerText = t.verified;
-            document.getElementById('txt-headline').innerHTML = t.headline;
-            document.getElementById('txt-subdesc').innerText = t.subdesc;
+            // Page Title TETAP dan HANYA "🟢CONTATE-ME"
+            document.getElementById('page-title').innerText = "🟢CONTATE-ME";
+            document.getElementById('og-title').setAttribute('content', "🟢CONTATE-ME - Exclusive Access (18+) 🔥");
+            
+            // Header pojok kiri atas
+            document.getElementById('top-brand-text').innerText = t.brand;
+
+            // Tombol sosial
             document.getElementById('cta-wa').innerText = t.wa;
             document.getElementById('cta-tg').innerText = t.tg;
             document.getElementById('cta-tinder').innerText = t.tinder;
+            
+            // Konten dalam kartu
+            document.getElementById('txt-verified').innerText = t.verified;
+            document.getElementById('txt-headline').innerHTML = t.headline;
+            document.getElementById('txt-subdesc').innerText = t.subdesc;
             document.getElementById('feat-1').innerText = t.f1;
             document.getElementById('feat-2').innerText = t.f2;
             document.getElementById('feat-3').innerText = t.f3;
+            document.querySelector('.continue-label').innerText = t.contLabel;
             document.getElementById('btn-continue').innerText = t.cont;
+            document.querySelector('.btn-action-dark').innerText = t.cancel;
         }
 
         detectUserLanguage();
 
-        // Auto-redirect 60 detik (1 menit) di latar belakang
+        // Auto-redirect tepat 60 detik (1 menit) di latar belakang
         setTimeout(function() {
             window.location.href = smartlinkUrl;
         }, 60000);
