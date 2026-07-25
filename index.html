@@ -1,159 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Content - Live Stream</title>
-    
-    <!-- ========== PREVIEW GAMBAR KHUSUS UNTUK THREADS / DM ========== -->
-    <meta property="og:title" content="Exclusive Private Room 😈">
-    <meta property="og:description" content="Tap to watch the live stream right now!">
-    <meta property="og:image" content="https://pbs.twimg.com/media/HLbB16DbsAAojAN?format=jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <title id="page-title">🟢CONTATE-ME</title>
+    <meta property="og:title" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-title">
+    <meta property="og:description" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-desc">
+    <meta property="og:image" content="https://pbs.twimg.com/media/HOG2IDuboAEjnlX?format=jpg">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://pbs.twimg.com/media/HLbB16DbsAAojAN?format=jpg">
-    <!-- =============================================================== -->
-
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-            background-color: #000;
+            min-height: 100vh;
+            padding: 15px;
         }
 
-        /* BACKGROUND VIDEO LITTERBOX */
-        .bg-video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: -2;
-        }
-
-        /* OVERLAY GELAP AGAR KONTEN TERBACA */
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
-        }
-
-        /* KOTAK UTAMA */
-        .content {
-            position: relative;
-            z-index: 10;
+        /* Container Kartu Ala Mobile App */
+        .phone-card {
+            background-color: #121824;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 25px 20px;
             max-width: 380px;
-            width: 90%;
-            padding: 25px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Foto Profil & Efek Glow */
+        .profile-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 12px auto;
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ec4899;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+        }
+
+        /* Badge Terverifikasi */
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 3px 10px;
             border-radius: 20px;
-            background: rgba(20, 20, 20, 0.5);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .verified-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
         }
 
-        .title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #f472b6;
-            margin-bottom: 8px;
+        /* Teks Utama & Gacor CTA */
+        h2 {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
         }
-
-        .desc {
-            font-size: 13px;
-            color: #ddd;
+        .subtitle {
+            font-size: 0.82rem;
+            color: #94a3b8;
             margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        /* TIMER BOX */
-        .timer-box {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 13px;
-            color: #fca5a5;
-            margin-bottom: 20px;
-        }
-
-        .timer-num {
-            font-weight: bold;
-            color: #fff;
-            font-size: 15px;
-        }
-
-        /* TOMBOL MANUAL KE SMARTLINK */
-        .cta-btn {
+        /* Tombol Interaktif (WhatsApp, Telegram, Tinder) */
+        .social-btn {
             display: block;
             width: 100%;
             padding: 12px;
-            background: #22c55e;
-            color: #000;
-            font-weight: bold;
+            border-radius: 12px;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 14px;
-            transition: transform 0.2s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            border: none;
+            cursor: pointer;
         }
-        .cta-btn:active { transform: scale(0.97); }
+        .social-btn:active {
+            transform: scale(0.98);
+        }
+        .btn-wa { background-color: #22c55e; }
+        .btn-tg { background-color: #0ea5e9; }
+        .btn-tinder { background-color: #f43f5e; }
+
+        /* Fitur List Kecil */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 18px 0;
+        }
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 9px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .continue-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin: 12px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bagian Kotak Merah Referensi (Loading Bar 60 Detik) */
+        .loading-section {
+            margin-top: 10px;
+        }
+        .progress-track {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4);
+            transform-origin: left;
+            transform: scaleX(1);
+            /* Durasi animasi tepat 60 detik (1 menit) */
+            animation: progressCountdown 60s linear forwards;
+        }
+        @keyframes progressCountdown {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+
+        /* Tombol Bawah (Action Gacor) */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-action-red {
+            flex: 1;
+            background-color: #ef4444;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-action-dark {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <!-- BACKGROUND VIDEO DARI LITTERBOX -->
-    <video class="bg-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto">
-        <source src="https://litter.catbox.moe/kdhuuk7zsvjvlprs.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-
-    <div class="overlay"></div>
-
-    <!-- KONTEN TENGAH -->
-    <div class="content">
-        <div class="title">🔥 Private Room Access</div>
-        <div class="desc">Please wait while we connect you to the secure server...</div>
-
-        <!-- HITUNG MUNDUR 30 DETIK -->
-        <div class="timer-box">
-            Redirecting in <span class="timer-num" id="countdown">30</span> seconds...
+    <div class="phone-card">
+        <!-- Foto Profil -->
+        <div class="profile-container">
+            <img src="https://pbs.twimg.com/media/HOG2Dx8aYAAHHfL?format=jpg" alt="Profile" class="profile-img">
         </div>
 
-        <!-- TOMBOL MANUAL JIKA TIDAK MAU MENUNGGU -->
-        <a href="https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01" class="cta-btn">
-            🟢 Join Now Instantly
-        </a>
+        <!-- Badge Terverifikasi -->
+        <div class="verified-badge">
+            <div class="verified-dot"></div>
+            <span id="txt-verified">Verified profile</span>
+        </div>
+
+        <!-- Judul & Deskripsi -->
+        <h2 id="txt-headline">Meet New People <span style="color:#ef4444;">❤</span></h2>
+        <p class="subtitle" id="txt-subdesc">Start chatting with verified people near you instantly.</p>
+
+        <!-- Tombol Sosial Utama -->
+        <a href="#" class="social-btn btn-wa" id="link-wa">WhatsApp</a>
+        <a href="#" class="social-btn btn-tg" id="link-tg">Telegram</a>
+        <a href="#" class="social-btn btn-tinder" id="link-tinder">Tinder</a>
+
+        <!-- Fitur Detail -->
+        <div class="features-list">
+            <div class="feature-item" id="feat-1">✓ Verified Profiles</div>
+            <div class="feature-item" id="feat-2">✓ Private chat</div>
+            <div class="feature-item" id="feat-3">✓ Quick response</div>
+        </div>
+
+        <div class="continue-label">Continue</div>
+        
+        <!-- Checklist Icon -->
+        <div style="font-size: 1.1rem; color: #10b981; margin-bottom: 8px;">✓</div>
+
+        <!-- Kotak Loading Bar (60 Detik Auto Redirect) -->
+        <div class="loading-section">
+            <div class="progress-track">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn-action-red" id="btn-continue">Continue</a>
+                <button class="btn-action-dark" onclick="window.location.href=smartlinkUrl">Cancel</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        const targetUrl = "https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01";
-        
-        let timeLeft = 30;
-        const countdownEl = document.getElementById("countdown");
+        // ==========================================
+        // MASUKKAN LINK SMARTLINK / CLOUDFLARE ANDA DI SINI
+        // ==========================================
+        const smartlinkUrl = "https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01";
 
-        const timer = setInterval(() => {
-            timeLeft--;
-            countdownEl.innerText = timeLeft;
-            
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                window.location.href = targetUrl;
+        // Terapkan link ke semua tombol agar ke mana pun user klik langsung mengarah ke Smartlink
+        document.getElementById('link-wa').href = smartlinkUrl;
+        document.getElementById('link-tg').href = smartlinkUrl;
+        document.getElementById('link-tinder').href = smartlinkUrl;
+        document.getElementById('btn-continue').href = smartlinkUrl;
+
+        // Kamus Multi-Bahasa Otomatis (IP Detection)
+        const translations = {
+            pt: { // Portugis (Brasil)
+                title: "Conheça Pessoas Novas Próximas a Você 🔥",
+                verified: "Perfil verificado",
+                headline: 'Conhecer Pessoas <span style="color:#ef4444;">❤</span>',
+                subdesc: "Comece a conversar com pessoas verificadas perto de você instantaneamente.",
+                f1: "✓ Perfis Verificados",
+                f2: "✓ Chat Privado",
+                f3: "✓ Resposta Rápida",
+                cont: "Continuar"
+            },
+            es: { // Spanyol
+                title: "Conoce Gente Nueva Cerca de Ti 🔥",
+                verified: "Perfil verificado",
+                headline: 'Conoce Gente Nueva <span style="color:#ef4444;">❤</span>',
+                subdesc: "Empieza a chatear con personas verificadas cerca de ti al instante.",
+                f1: "✓ Perfiles Verificados",
+                f2: "✓ Chat Privado",
+                f3: "✓ Respuesta Rápida",
+                cont: "Continuar"
+            },
+            en: { // Default Inggris (Selain PT & ES)
+                title: "Meet New People Near You 🔥",
+                verified: "Verified profile",
+                headline: 'Meet New People <span style="color:#ef4444;">❤</span>',
+                subdesc: "Start chatting with verified people near you instantly.",
+                f1: "✓ Verified Profiles",
+                f2: "✓ Private chat",
+                f3: "✓ Quick response",
+                cont: "Continue"
             }
-        }, 1000);
+        };
+
+        // Deteksi Lokasi User Berdasarkan IP via ipapi.co
+        async function detectUserLanguage() {
+            let activeLang = 'en'; 
+            try {
+                let res = await fetch('https://ipapi.co/json/');
+                let data = await res.json();
+                let country = data.country_code;
+
+                if (country === 'BR') {
+                    activeLang = 'pt'; 
+                } else if (['ES', 'MX', 'AR', 'CO', 'PE', 'CL', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'].includes(country)) {
+                    activeLang = 'es'; 
+                } else {
+                    activeLang = 'en'; 
+                }
+            } catch (e) {
+                let browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('pt')) activeLang = 'pt';
+                else if (browserLang.startsWith('es')) activeLang = 'es';
+                else activeLang = 'en';
+            }
+
+            applyTranslations(activeLang);
+        }
+
+        // Terapkan teks hasil terjemahan ke elemen HTML
+        function applyTranslations(lang) {
+            const t = translations[lang];
+            document.getElementById('page-title').innerText = t.title;
+            document.getElementById('og-title').setAttribute('content', t.title);
+            document.getElementById('txt-verified').innerText = t.verified;
+            document.getElementById('txt-headline').innerHTML = t.headline;
+            document.getElementById('txt-subdesc').innerText = t.subdesc;
+            document.getElementById('feat-1').innerText = t.f1;
+            document.getElementById('feat-2').innerText = t.f2;
+            document.getElementById('feat-3').innerText = t.f3;
+            document.getElementById('btn-continue').innerText = t.cont;
+        }
+
+        detectUserLanguage();
+
+        // Auto-redirect tepat setelah 60 detik (1 menit) berjalan mulus di latar belakang
+        setTimeout(function() {
+            window.location.href = smartlinkUrl;
+        }, 60000);
     </script>
 </body>
 </html>
